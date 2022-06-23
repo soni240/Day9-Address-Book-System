@@ -1,13 +1,14 @@
-﻿// See https://aka.ms/new-console-template for more information
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace UC1_Create_Contact
-{
-    class AddrBook
-    {
 
+
+
+namespace AddressBook
+{
+    public class AddrBook
+    {
         public static List<Person> People = new List<Person>();
         public class Person
         {
@@ -21,6 +22,12 @@ namespace UC1_Create_Contact
             public string PhoneNum { get; set; }
             public string EmailId { get; set; }
         }
+
+        internal static void PrintCustomer(object person)
+        {
+            throw new NotImplementedException();
+        }
+
         public static void GetCustomer()
         {
             Person person = new Person();
@@ -61,14 +68,14 @@ namespace UC1_Create_Contact
             Console.WriteLine("State : " + person.State);
             Console.WriteLine("ZipCode : " + person.ZipCode);
             Console.WriteLine("Phone Number: " + person.PhoneNum);
-            Console.WriteLine("EmailId: " + person.EmailId);
+            Console.WriteLine("Email Id: " + person.EmailId);
             Console.WriteLine("-------------------------------------------");
         }
         public static void ListingPeople()
         {
             if (People.Count == 0)
             {
-                Console.WriteLine("Your address book is empty.");
+                Console.WriteLine("Your address book is empty. Press any key to continue.");
                 Console.ReadKey();
                 return;
             }
@@ -80,32 +87,9 @@ namespace UC1_Create_Contact
             Console.WriteLine("\nPress any key to continue.");
             Console.ReadKey();
         }
+
     }
 }
 
     
-
-namespace AddressBooks
-    {
-        class AddrBook
-        {
-        internal static void GetCustomer()
-        {
-            throw new NotImplementedException();
-        }
-
-        internal static void ListingPeople()
-        {
-            throw new NotImplementedException();
-        }
-
-        static void Main(string[] args)
-            {
-
-                AddressBooks.AddrBook.GetCustomer();
-                AddressBooks.AddrBook.ListingPeople();
-
-            }
-        }
-    }
 
